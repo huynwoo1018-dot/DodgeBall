@@ -4,22 +4,22 @@ using UnityEngine;
 public class SphereSpawner : MonoBehaviour
 {
     [Tooltip("떨어뜨릴 Sphere 프리팹 (Rigidbody 포함)")]
-    public GameObject spherePrefab;
+    [SerializeField] private GameObject spherePrefab;
 
     [Tooltip("생성 간격 (초)")]
-    public float spawnInterval = 3f;
+    [SerializeField] private float spawnInterval = 3f;
 
     [Tooltip("생성 높이")]
-    public float spawnHeight = 10f;
+    [SerializeField] private float spawnHeight = 10f;
 
     [Tooltip("생성 범위 (바닥 중심 기준 ± 거리). 10x10 바닥이면 4.5 정도")]
-    public float spawnRange = 4.5f;
+    [SerializeField] private float spawnRange = 4.5f;
 
     [Tooltip("생성된 Sphere가 자동 삭제되기까지 시간 (초)")]
-    public float sphereLifetime = 10f;
+    [SerializeField] private float sphereLifetime = 10f;
 
     // 생성 여부 (Game Over 시 false로 바꿀 수 있음)
-    public bool isSpawning = true;
+    private bool isSpawning = true;
 
     private float timer = 0f;
 

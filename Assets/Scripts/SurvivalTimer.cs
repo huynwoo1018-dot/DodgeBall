@@ -5,10 +5,10 @@ using UnityEngine.UI;
 public class SurvivalTimer : MonoBehaviour
 {
     [Tooltip("Game Over 여부를 확인할 플레이어")]
-    public PlayerController player;
+    [SerializeField] private PlayerController player;
 
     [Tooltip("시간을 표시할 UI Text")]
-    public Text timeText;
+    [SerializeField] private Text timeText;
 
     private float survivalTime = 0f;
 

@@ -8,16 +8,16 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [Tooltip("이동 속도 (초당 이동 거리)")]
-    public float moveSpeed = 5f;
+    [SerializeField] private float moveSpeed = 5f;
 
     // 이동 가능 여부 (Game Over 시 false로 바뀜)
-    public bool canMove = true;
+    private bool canMove = true;
 
     // Game Over 상태인지 (다른 스크립트에서 읽기 전용으로 확인)
     public bool IsGameOver { get; private set; } = false;
 
     [Tooltip("플레이어 높이가 이 값보다 낮아지면 바닥에서 떨어진 것으로 보고 Game Over")]
-    public float fallThreshold = -2f;
+    [SerializeField] private float fallThreshold = -2f;
 
     private Rigidbody rb;
     private Vector3 moveInput;
